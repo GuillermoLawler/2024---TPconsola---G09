@@ -81,3 +81,69 @@ Contenido para Publicar en la Consola
 
 - Flujo de Información: Muestra cómo los datos se mueven a través del sistema. Por ejemplo, imprimir datos recibidos en una solicitud HTTP y la respuesta generada puede ayudar a verificar el flujo de información entre el cliente y el servidor.
 
+Claro, vamos a investigar algunos métodos del objeto console en JavaScript distintos de console.log. Aquí te explico tres de ellos:
+
+1. console.error()
+Descripción: console.error() se utiliza para mostrar mensajes de error en la consola. Es útil para registrar errores que ocurren en el código, ya que generalmente estos mensajes se resaltan en rojo o tienen un formato diferente para destacar su importancia.
+
+Uso:
+
+console.error('Este es un mensaje de error.');
+Ejemplo:
+
+Supongamos que estás desarrollando una función que divide dos números y deseas registrar un error si el divisor es cero:
+
+function dividir(dividendo, divisor) {
+    if (divisor === 0) {
+        console.error('Error: División por cero.');
+        return;
+    }
+    return dividendo / divisor;
+}
+
+dividir(10, 0);  // Esto registrará "Error: División por cero."
+2. console.warn()
+Descripción: console.warn() se utiliza para mostrar advertencias. Estos mensajes suelen aparecer en amarillo en la consola y son útiles para señalar problemas que no son errores críticos pero que podrían necesitar atención.
+
+Uso:
+
+console.warn('Este es un mensaje de advertencia.');
+Ejemplo:
+
+Imaginemos que tienes una función que está en desuso:
+
+function funcionAntigua() {
+    console.warn('Advertencia: Esta función está obsoleta y será eliminada en futuras versiones.');
+}
+
+funcionAntigua();  // Esto registrará "Advertencia: Esta función está obsoleta y será eliminada en futuras versiones."
+3. console.table()
+Descripción: console.table() permite visualizar datos en formato de tabla. Es muy útil para mostrar arreglos y objetos en una forma tabular, lo que facilita su lectura y análisis.
+
+Uso:
+
+console.table([
+    { nombre: 'Juan', edad: 30 },
+    { nombre: 'Ana', edad: 25 },
+    { nombre: 'Pedro', edad: 35 }
+]);
+Ejemplo:
+
+Supongamos que tienes un array de objetos que representa una lista de usuarios y quieres visualizarlo en una tabla para facilitar su análisis:
+
+javascript
+Copiar código
+const usuarios = [
+    { id: 1, nombre: 'Alice', edad: 28 },
+    { id: 2, nombre: 'Bob', edad: 32 },
+    { id: 3, nombre: 'Charlie', edad: 25 }
+];
+
+console.table(usuarios);
+Este código imprimirá una tabla en la consola con las columnas id, nombre y edad, mostrando los datos de cada usuario de forma clara y ordenada.
+
+Resumen
+console.error(): Muestra mensajes de error. Útil para registrar y destacar errores críticos.
+console.warn(): Muestra advertencias. Ideal para señalar problemas que requieren atención pero no son críticos.
+console.table(): Muestra datos en formato tabular. Facilita la visualización y análisis de arreglos y objetos.
+Estos métodos enriquecen la manera en que puedes registrar y visualizar la información en la consola, ayudándote a depurar y entender mejor tu código.
